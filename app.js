@@ -28,18 +28,45 @@ const getAllAcc = async () => {
     }
 }
 
-const makeTrans = async() => {
-	try {
+function getAccountIndex(){
+	if(document.getElementById("accountTable").style.display == "none"){
+		getAllAcc();
+		document.getElementById("accountTable").style.display = "inline";
+		document.getElementById("displayBtn").style.display = "none";
+	}
+}
 
-	} catch(err){
+const getBalanceInfo = async () => {
+	try{
+		id = document.getElementById("accountIndex").value;
+		if(id >= 0 && id != ""){
+			const account = await web3.eth.getAccounts();
+
+			balance = await web3.eth.getBalance(account[id]);
+
+			document.getElementById("balance").innerHTML = "wei : " + balance;
+			document.getElementById("balance").innerHTML += "<br> ether : " + web3.utils.toWei(balance, "ether");	
+		}else{
+			document.getElementById("balance").innerHTML = "insert value over or equal to 0";
+		}
+		
+	}catch(err){
 		console.log(err);
 	}
 }
 
-getAllAcc();
+const createAccount = async () => {
+	try{
+		account = await web3.eth.accounts.create();
+		document.getElementById("account").innerHTML += "address : " + account.address+ "<br>";
+		document.getElementById("account").innerHTML += "private key : " + account.privateKey+ "\n";
+	}catch(err){ console.log(err)}
+}
 
-
-
+function hide(){
+	document.getElementById('accountTable').style.display = 'none';
+	document.getElementById('displayBtn').style.display = 'inline';
+}
 
 
 

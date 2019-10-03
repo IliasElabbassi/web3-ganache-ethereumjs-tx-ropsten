@@ -7,22 +7,51 @@
 <body>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.js"></script>
 
-	<div class="container">
-		<div class="row">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		
 			<h3 class="offset-md-4">Web3 & ganache-cli (test)</h3>
-		</div>
+	</nav>
+
+	<br>
+
+	<div class="container">	
+		
 		<div class="row">
-			<table class="table">
-				<thead>
-					<tr>
-						<th scope="col">index </th>
-						<th scope="col">address</th>
-					</tr>
-				</thead>
-				<tbody id="tableBody">
-				</tbody>
-			</table>
-		</div>	
+			<button onclick="getAccountIndex()" id="displayBtn" class="btn btn-primary">display accounts</button>
+		
+			<div class="row" style="display: none" id="accountTable">
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">index </th>
+							<th scope="col">address</th>
+						</tr>
+					</thead>
+					<tbody id="tableBody">
+					</tbody>
+				</table>
+			
+				<button onclick="hide()" class="btn btn-primary">hide</button>
+			</div>
+		</div>
+
+		<br>
+
+		<div class="row">
+			<p class="col-md-2">choose an account (from index)</p>
+			<input  class="col-md-2" type="text" id="accountIndex">
+			<button class="btn btn-primary col-md-2" onclick="getBalanceInfo()">get balance</button>
+			<p id="balance" class="col-md-*"></p>
+		</div>
+
+		<br>
+
+		<div class="row">
+			<button class="btn btn-primary col-md-1" onclick="createAccount()">create account</button>
+		
+			<p id="account" class="col-md-11"></p>
+		</div>
+
 	</div>
 
 	<script type="text/javascript" src="./app.js"></script>
