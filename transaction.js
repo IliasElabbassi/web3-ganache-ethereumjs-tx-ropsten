@@ -7,6 +7,7 @@ let web3 = new Web3('https://ropsten.infura.io/v3/6891f5eb87b548a7b7f029e19aa407
 const acc1 = '0x8Da4DfFC46975d757fB4CC2337278c9D758C03EC';
 const acc2 = '0xd6D0369Fe8A39C98EAF98fabE43eFD74D010C0b2';
 
+// private keys initialized with export PRIVATE_KEY_(1/2)="private key without the 0x" in cmd line
 const pk1 = Buffer.from(process.env.PRIVATE_KEY_1, 'hex');
 const pk2 = Buffer.from(process.env.PRIVATE_KEY_2, 'hex');
 
