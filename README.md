@@ -8,6 +8,7 @@ using :
 
 for transaction.js:
   - install nodejs
+  - npm install -g ganache-cli (if you want to use a local test ethereum blockchain )
   - create dir
   - cd into dir
   - npm init
