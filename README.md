@@ -27,4 +27,5 @@ for web3_sc_deploy.js:
   - npm install ethereumjs-tx
   
   to run the code : node web3_sc_deploy.js blockchain  account  address  private_key
-    blockchain : main or localhost:8545 or ropsten
+  
+  blockchain : main or localhost:8545 or ropsten
