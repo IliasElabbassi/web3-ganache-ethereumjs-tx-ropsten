@@ -26,12 +26,5 @@ for web3_sc_deploy.js:
   - npm install web3
   - npm install ethereumjs-tx
   
-  to run the code : node web3_sc_deploy.js [blockchain] [account address] [private key]
-    [blockchain] : - ropsten
-                   - main
-                   - localhost (port 8545 by default)
-    
-    [account address] : the address of the account you are deploying with
-    [private key] : the private key of this address
-    
-     info : you can change the gas limit, gas price and port directly in the code
+  to run the code : node web3_sc_deploy.js <blockchain> <account address> <private key>
+  <blockchain> : main or localhost:8545 or ropsten
